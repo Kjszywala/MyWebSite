@@ -77,7 +77,7 @@
     <br><center>
         <h2>Login</h2>
         <h5>Sign in to get most from our restaurant</h5>
-        <form method=POST action="">
+        <form method=POST action="register.php">
             <table>
                 <tr>
                     <td><b>Login</b></td>
@@ -88,7 +88,7 @@
                     <td><input type="text" name="password" maxlength="255"/></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type=submit name="singIn" id="test" value='Sign In' style='width: 100%;'></td>
+                    <td colspan="2"><input type=submit name="singIn" id="test" value='Sign In' style='width: 100%;' formaction="aboutus.php"></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type=submit name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>

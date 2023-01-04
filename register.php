@@ -69,10 +69,11 @@
     <center>
         <img id="img2" src="images/logo.png"/>
         <h1 id="register">Register</h1>
-        <button id="button">Main Menu</button>
+        <button id="button" onclick="location.href='login.php'">Main Menu</button>
     </center><br>
 <div id="rcorners1" >
     <center>
+    <form method=POST action="register.php">
     <table>
         <br><br>
         <tr>
@@ -116,7 +117,8 @@
             <td colspan="2" style="padding-top: 30px;">
             <input type=submit name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>
         </tr>
-    </table>  
+    </table> 
+    </form>
     </center>
 </div>
 </body>
