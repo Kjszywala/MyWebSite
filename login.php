@@ -18,7 +18,6 @@
         margin-left: 40px;
         margin-right: 40px;
         height: 60%;
-        opacity: 0.9;
         background-size: 100% 100%;
     }
     input[type=submit]{
@@ -47,11 +46,31 @@
         width: 250px;
         height: 100px;
     }
+    #button{
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        
+    }
+    #button:hover{
+        background-color: #5ccc44;
+    }
+    #login{
+        color: white;
+        font-family: brush script mt, cursive;
+    }
   </style>
 </head>
 <body>
     <center>
         <img id="img2" src="images/logo.png"/>
+        <h1 id="login">Login</h1>
+        <button id="button">Main Menu</button>
     </center><br>
 <div id="rcorners1" >
     <div style="background-color: transparent; width: 50%; height: 500px; float:left;">
@@ -73,9 +92,6 @@
                 </tr>
                 <tr>
                     <td colspan="2"><input type=submit name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type=submit name="back" id="test" value='Main Menu' style='width: 100%;'></td>
                 </tr>
             </table>
         </form>
