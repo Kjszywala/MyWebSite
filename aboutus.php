@@ -4,7 +4,7 @@
   <title>AboutUs</title>
   <style>
 	body { 
-        background-image: url("log.jpg");
+        background-image: url("images/log.jpg");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -74,7 +74,7 @@
 </head>
 <body>
     <center>
-        <img id="img1" src="logo.png"/>
+        <img id="img1" src="images/logo.png"/>
         <h1 id="about">About Us</h1>
         <button id="button">Main Menu</button>
     </center><br>
