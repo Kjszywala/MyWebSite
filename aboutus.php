@@ -4,7 +4,7 @@
   <title>AboutUs</title>
   <style>
 	body { 
-        background-image: url("images/log.jpg");
+        background-image: url("images/photo6.jpg");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -15,7 +15,7 @@
         height: 100px;
     }
     #about{
-        color: white;
+        color: black;
         font-family: brush script mt, cursive;
     }
     #rcorners1 {
@@ -51,7 +51,7 @@
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 5px;
-        
+        font-family: brush script mt, cursive;
     }
     #button:hover{
         background-color: #5ccc44;
