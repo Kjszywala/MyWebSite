@@ -70,7 +70,7 @@
     <center>
         <img id="img2" src="images/logo.png"/>
         <h1 id="login">Login</h1>
-        <button id="button">Main Menu</button>
+        <button id="button" onclick="location.href='mainwindow.html'">Main Menu</button>
     </center><br>
 <div id="rcorners1" >
     <div style="background-color: transparent; width: 50%; height: 500px; float:left;">

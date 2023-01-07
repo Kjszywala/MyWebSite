@@ -69,7 +69,7 @@
     <center>
         <img id="img2" src="images/logo.png"/>
         <h1 id="register">Register</h1>
-        <button id="button" onclick="location.href='login.php'">Main Menu</button>
+        <button id="button" onclick="location.href='mainwindow.html'">Main Menu</button>
     </center><br>
 <div id="rcorners1" >
     <center>

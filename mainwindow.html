@@ -1,0 +1,165 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <style>
+    #transparent{
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 2ch;
+        margin-right: 2ch;
+    }
+    #transparent:hover{
+        color: rgb(62, 68, 68);
+        transform: scale(1.25) perspective(1px)
+    }
+    #image{
+        margin-left: 10%;
+        display: block;
+        position: absolute;
+
+    }
+    #buttonsDiv{
+        margin-top: 30px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    body {
+        background-image: url('images/photo6.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+    }
+    #headerStyle{
+        /* background-color: linear-gradient (#04AA6D,white); */
+        background-image: linear-gradient(#04AA6D 60%, transparent);
+        margin-top: -30px;
+        height: 110px;
+        vertical-align: middle;
+        padding-top: 25px;
+    }
+    #sliderDiv{
+    padding: 0;
+    margin: 0;
+    margin-top: 4cm;
+    box-sizing: border-box;
+    }
+
+    /*Basic structure of slider*/
+    .container{
+        width: 500px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        border: 10px solid black;
+        border-radius: 8px;
+        box-shadow: -1px 5px 15px black;
+    }
+
+    /*Area of images*/
+    .wrapper{
+        width: 100%;
+        display: flex;
+        animation: slide 16s infinite;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    /*Animation activated by keyframes*/
+    @keyframes slide{
+        0%{
+            transform: translateX(0);
+        }
+        25%{
+            transform: translateX(0);
+        }
+        30%{
+            transform: translateX(-100%);
+        }
+        50%{
+            transform: translateX(-100%);
+        }
+        55%{
+            transform: translateX(-200%);
+        }
+        75%{
+            transform: translateX(-200%);
+        }
+        80%{
+            transform: translateX(-300%);
+        }
+        100%{
+            transform: translateX(-300%);
+        }
+    }
+    #sliderDiv{
+        width: 50%;
+        height: 60%;
+    }
+    #bookdiv{
+        text-align: center;
+        height: 250px;
+    }
+    #book{
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20px;
+        margin-top: 80px;
+        font-size: x-large;
+    }
+    input[type=button]{
+        color: white;
+    }
+  </style>
+</head>
+<body>
+    <header id="headerStyle">    
+        <form method="post" action="">
+                <!-- <div id = "image">
+                    <img src="icon.png" style="width: 40px; height: 40px;">
+                </div> -->
+                <div id="buttonsDiv">
+                    <input type="button" value="Menu" id="transparent">
+                    <input type="button" value="About Us" id="transparent" onclick="location.href='aboutus.php'">
+                    <input type="button" value="Contact" id="transparent">
+                    <input type="button" value="Login" id="transparent" onclick="location.href='login.php'">
+                    <input type="button" value="Register" id="transparent" onclick="location.href='register.php'">
+                </div>
+                <!-- <hr> -->
+        </form>
+    </header>
+    <div id="bookdiv">
+        <button id="book">Book a Table</button>
+    </div>
+    <div class="container" id="sliderDiv">
+        <!--Area of the images-->
+            <div class="wrapper">
+                <img src="images/photo1.jpg">
+                <img src="images/photo2.jpg">
+                <img src="images/photo5.jpg">
+                <img src="images/photo4.jpg">
+            </div>
+        
+        </div>
+    <!-- <marquee>
+        <div>
+            <h3>Welcome in our hotel/restaurant</h3>
+        </div>
+    </marquee> -->
+</body>
+</html>
