@@ -1,4 +1,5 @@
 <?php
+    session_set_cookie_params(0);
     session_start();
 ?>
 <html>
@@ -17,10 +18,10 @@
                 <input type="button" value="Contact Us" id="transparent" onclick="location.href='contact.php'">
                 <?php
                     if (@$_SESSION["login"]) {
+                        echo "<input type='submit' value='Logout' name='logout' id='transparent'>";
+                    } else {
                         echo "<input type='button' value='Login' id='transparent' onclick=\"location.href='login.php'\">
                             <input type='button' value='Register' id='transparent' onclick=\"location.href='register.php'\">";
-                    } else {
-                        echo "<input type='submit' value='Logout' name='logout' id='transparent'>";
                     }
                 ?>
             </div>
@@ -28,7 +29,7 @@
     </header>
     <?php
         if(isset($_POST['logout'])){
-            $_SESSION["login"] = true;
+            $_SESSION["login"] = false;
             header("Location: mainwindow.php");
             die();
         }
@@ -38,7 +39,7 @@
         <img src="images/logo.png" id="logo">
     </div>
     <?php
-        if($_SESSION['login'] == false){
+        if(@$_SESSION['login'] == true){
             echo "
                 <div id=\"bookdiv\">
                     <button id=\"book\">Book a Table</button>

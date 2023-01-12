@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'phpscripts.php';
 ?>
 <html>
 <head>
@@ -32,14 +33,14 @@
                     <td colspan="2"><input type="submit" name="singIn" id="test" value='Sign In' style='width: 100%;'></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>
+                    <td colspan="2"><input type="button" name="singUp" id="test" value='Sign Up' style='width: 100%;' onclick="location.href='register.php'"></td>
                 </tr>
             </table>
         </form>
     </center>
     <?php
     if(isset($_POST['singIn'])){
-        $_SESSION["login"] = false;
+        $_SESSION["login"] = true;
         header("Location: mainwindow.php");
         die();
     }

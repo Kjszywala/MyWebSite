@@ -137,7 +137,7 @@
     #book:hover{
         font-size: xx-large;
     }
-    input[type=button]{
+    input[type=button], input[type=submit]{
         color: white;
         font-family: brush script mt, cursive;
     }
