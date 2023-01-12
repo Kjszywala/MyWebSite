@@ -1,6 +1,24 @@
 <?php
     session_start();
     include 'phpscripts.php';
+    function getPassFile() {
+        $serwer = mysqli_connect("localhost", "root", "", "restauracja")
+            or exit("cannot connect to database");
+        mysqli_set_charset($serwer, "utf8");
+        $zapytanie = "SELECT * FROM `users`";
+        $uzytkownicy = mysqli_query($serwer, $zapytanie)
+                or exit("zle sformulowane zadanie");
+        $output = "";
+        while ($row = mysqli_fetch_assoc($uzytkownicy)) {
+            foreach ($row as $i) {
+                $output .= $i . ";";
+            }
+            $output .= "\n";
+        }
+        $myfile = fopen("users.txt", "w") or die("Unable to open file!");
+        fwrite($myfile,$output);
+        fclose($myfile);
+    }
 ?>
 <html>
 <head>
@@ -23,11 +41,11 @@
             <table>
                 <tr>
                     <td><b>Login</b></td>
-                    <td><input type="text" name="login" maxlength="255"/></td>
+                    <td><input type="text" name="login" maxlength="255" required/></td>
                 </tr>
                 <tr>
                     <td><b>Password</b></td>
-                    <td><input type="text" name="password" maxlength="255"/></td>
+                    <td><input type="text" name="password" maxlength="255" required/></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" name="singIn" id="test" value='Sign In' style='width: 100%;'></td>
@@ -37,15 +55,39 @@
                 </tr>
             </table>
         </form>
-    </center>
+    
     <?php
-    if(isset($_POST['singIn'])){
-        $_SESSION["login"] = true;
-        header("Location: mainwindow.php");
-        die();
-    }
+        if(isset($_POST['singIn'])){
+            $password = $_POST['password'];
+            getPassFile();
+            $file = @fopen("users.txt","r")
+                or exit("Error in txt file with users");
+            $found = false;
+            $hash = "";
+            while(!feof($file)) {
+                $userData = fgetcsv($file, 0, ';');
+                if(@$userData[1] == $_POST['login']) {
+                    $found = true; 
+                    break;
+                }
+            }
+            fclose($file);
+            unlink("users.txt");
+            if ($found) {
+                if (password_verify($password, $userData[2])) {
+                    $_SESSION["login"] = true;
+                    header("Location: mainwindow.php");
+                    die();
+                } else {
+                    echo "<h4>Wrong password</h4>";
+                }
+            } else {
+                echo "<h4>Wrong username</h4>";
+            }
+        }
     ?>
     </div>
+    </center>
     <div style="background-color: transparent; width:50%; height: 500px; float:left;">
     <br><center>
         <h2>SERVED EVERY DAY SINCE 1990</h2>

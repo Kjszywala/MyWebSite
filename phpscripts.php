@@ -22,4 +22,17 @@
         global $connection;
         mysqli_close($connection);
     }
+
+    function save_user() {
+        global $polaczenie;
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $age = $_POST['age'];
+        $gender = $_POST['gender'];
+        $query = "insert into users values('$login', '$password', '$name', '$surname', '$email', '$age', '$gender');";	
+        mysqli_query($polaczenie, $query) or exit("Query error: ".$query);
+    }
 ?>
