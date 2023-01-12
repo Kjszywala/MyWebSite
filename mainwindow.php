@@ -8,6 +8,18 @@
     <title>MainWindow</title>
     <link rel="stylesheet" href="mainwindow.css">
 </head>
+<style>
+    #label1{
+        background-color: transparent;
+        border-color: transparent;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 2ch;
+        margin-right: 2ch;
+        color: white;
+        font-family: brush script mt, cursive;
+    }
+</style>
 <body>
     <header id="headerStyle">    
         
@@ -17,8 +29,10 @@
                 <input type="button" value="About Us" id="transparent" onclick="location.href='aboutus.php'">
                 <input type="button" value="Contact Us" id="transparent" onclick="location.href='contact.php'">
                 <?php
+                    $name1 = @$_SESSION['name'];
                     if (@$_SESSION["login"]) {
-                        echo "<input type='submit' value='Logout' name='logout' id='transparent'>";
+                        echo "<input type='submit' value='Logout' name='logout' id='transparent'>
+                                <label id=\"label1\">Hello $name1!</label>";
                     } else {
                         echo "<input type='button' value='Login' id='transparent' onclick=\"location.href='login.php'\">
                             <input type='button' value='Register' id='transparent' onclick=\"location.href='register.php'\">";
@@ -34,7 +48,6 @@
             die();
         }
     ?>
-
     <div id = "image">
         <img src="images/logo.png" id="logo">
     </div>

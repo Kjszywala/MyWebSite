@@ -77,6 +77,7 @@
                 if (password_verify($password, $userData[2])) {
                     $_SESSION["login"] = true;
                     header("Location: mainwindow.php");
+                    $_SESSION["name"] = $userData[3];
                     die();
                 } else {
                     echo "<h4>Wrong password</h4>";

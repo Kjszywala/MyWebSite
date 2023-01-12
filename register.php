@@ -77,7 +77,7 @@
             $query = "insert into users values(null, '$login', '$password', '$name', '$surname', '$email', '$age', '$gender');";
             mysqli_query($connection, $query) or exit("Query error: " . $query);
             $_SESSION['login'] = true;
-            echo '<script>alert("Succesfully registrated")</script>';
+            $_SESSION["name"] = $name;
             header("Location: mainwindow.php");
             close_connection();
             die();

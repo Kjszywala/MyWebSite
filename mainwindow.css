@@ -1,4 +1,4 @@
-#transparent{
+    #transparent{
         background-color: transparent;
         border-color: transparent;
         cursor: pointer;
@@ -6,6 +6,15 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         margin-left: 2ch;
         margin-right: 2ch;
+    }
+    .label{
+        background-color: transparent;
+        border-color: transparent;
+        font-size: x-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 2ch;
+        margin-right: 2ch;
+        color: white;
     }
     #transparent:hover{
         color: white;
