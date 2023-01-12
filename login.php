@@ -1,83 +1,24 @@
+<?php
+    session_start();
+?>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Login</title>
-  <style>
-	body { 
-        background-image: url("images/photo6.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        font-family: 'Times New Roman', serif;
-    }
-    #rcorners1 {
-        border-radius: 25px;
-        background: white;
-        padding: 20px;  
-        width: auto;
-        margin-left: 40px;
-        margin-right: 40px;
-        height: 60%;
-        background-size: 100% 100%;
-    }
-    input[type=submit]{
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    input[type=text] {
-        border: 2px;
-        border-radius: 4px;
-        background-color: lightblue;
-        size: 10;
-        height: 30;
-    }
-    #img1{
-        border-radius: 30%;
-        width: 350px;
-        height: 300px;
-    }
-    #img2{
-        width: 250px;
-        height: 100px;
-    }
-    #button{
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-family: brush script mt, cursive;
-    }
-    #button:hover{
-        background-color: #5ccc44;
-    }
-    #login{
-        color: black;
-        font-family: brush script mt, cursive;
-    }
-  </style>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <center>
         <img id="img2" src="images/logo.png"/>
         <h1 id="login">Login</h1>
-        <button id="button" onclick="location.href='mainwindow.html'">Main Menu</button>
+        <button id="button" onclick="location.href='mainwindow.php'">Main Menu</button>
     </center><br>
 <div id="rcorners1" >
     <div style="background-color: transparent; width: 50%; height: 500px; float:left;">
     <br><center>
         <h2>Login</h2>
         <h5>Sign in to get most from our restaurant</h5>
-        <form method=POST action="register.php">
+        <form method=POST action="">
             <table>
                 <tr>
                     <td><b>Login</b></td>
@@ -88,14 +29,21 @@
                     <td><input type="text" name="password" maxlength="255"/></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type=submit name="singIn" id="test" value='Sign In' style='width: 100%;' formaction="aboutus.php"></td>
+                    <td colspan="2"><input type="submit" name="singIn" id="test" value='Sign In' style='width: 100%;'></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type=submit name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>
+                    <td colspan="2"><input type="submit" name="singUp" id="test" value='Sign Up' style='width: 100%;'></td>
                 </tr>
             </table>
         </form>
     </center>
+    <?php
+    if(isset($_POST['singIn'])){
+        $_SESSION["login"] = false;
+        header("Location: mainwindow.php");
+        die();
+    }
+    ?>
     </div>
     <div style="background-color: transparent; width:50%; height: 500px; float:left;">
     <br><center>

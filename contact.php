@@ -1,84 +1,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Register</title>
-  <style>
-    #img2{
-        width: 250px;
-        height: 100px;
-    }
-    body { 
-        background-image: url("images/photo6.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        font-family: 'Times New Roman', serif;
-    }
-    #rcorners1 {
-        border-radius: 25px;
-        background: white;
-        height: 60%;
-        width: 500px;
-        margin: 0 auto;
-        background-size: 10% 10%;
-    }
-    input[type=submit]{
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    input[type=submit]:hover{
-        background-color: #5ccc44;
-    }
-    #textbox{
-        border: 2px;
-        border-radius: 4px;
-        background-color: lightblue;
-        size: 10;
-        height: 30;
-    }
-    #messagetextbox{
-        border-radius: 4px;
-        background-color: lightblue;
-        height: 160;
-        width: 100%;
-        word-wrap: break-word;
-        word-break: break-word;
-        
-    }
-    #button{
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-family: brush script mt, cursive;
-    }
-    #button:hover{
-        background-color: #5ccc44;
-    }
-    #register{
-        color: black;
-        font-family: brush script mt, cursive;
-    }
-    th, td {
-        padding: 11px;
-    }
-  </style>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <center>
         <img id="img2" src="images/logo.png"/>
         <h1 id="register">Contact Us</h1>
-        <button id="button" onclick="location.href='mainwindow.html'">Main Menu</button>
+        <button id="button" onclick="location.href='mainwindow.php'">Main Menu</button>
         
     </center><br>
 <div id="rcorners1" >
