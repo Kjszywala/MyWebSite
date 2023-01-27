@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -8,29 +9,12 @@
 </head>
 <body>
 		<center>
-        <img src="images/logo.png" id="img1">
+        <img src="images/logo.png" id="img1"><br>
 	<?php
         if(isset($_POST['logout'])){
             $_SESSION["login"] = false;
             header("Location: mainwindow.php");
             die();
-        }
-    ?>
-
-    <?php
-        if(@$_SESSION['login'] == true){
-            echo "
-                <div id=\"bookdiv\">
-                    <button id=\"book\" onclick=\"location.href='booking.php'\">Book a Table</button>
-                </div>";
-        }
-        else{
-            echo
-                "<center>
-                    <div id=\"logToBook\">
-                        <h4 id='pleaselogin'>Please log in to book a table.</h4>
-                    </div>
-                </center>";
         }
     ?>
     <button id="button" onclick="location.href='mainwindow.php'">Main Menu</button>

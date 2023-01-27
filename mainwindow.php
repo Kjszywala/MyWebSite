@@ -25,7 +25,8 @@
         
             <div id="buttonsDiv">
             <form method="post" action="">
-                <input type="button" value="Menu" name="logout" id="transparent">
+                <input type="button" value="Home" id="transparent" onclick="location.href='mainwindow.php'">
+                <input type="button" value="Menu"  id="transparent" onclick="location.href='Menu.php'">
                 <input type="button" value="About Us" id="transparent" onclick="location.href='aboutus.php'">
                 <input type="button" value="Contact Us" id="transparent" onclick="location.href='contact.php'">
                 <input type="button" value="Gallery" id="transparent" onclick="location.href='gallery.php'">
