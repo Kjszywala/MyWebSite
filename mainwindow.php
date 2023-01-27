@@ -28,6 +28,7 @@
                 <input type="button" value="Menu" name="logout" id="transparent">
                 <input type="button" value="About Us" id="transparent" onclick="location.href='aboutus.php'">
                 <input type="button" value="Contact Us" id="transparent" onclick="location.href='contact.php'">
+                <input type="button" value="Gallery" id="transparent" onclick="location.href='gallery.php'">
                 <?php
                     $name1 = @$_SESSION['name'];
                     if (@$_SESSION["login"]) {
@@ -55,7 +56,7 @@
         if(@$_SESSION['login'] == true){
             echo "
                 <div id=\"bookdiv\">
-                    <button id=\"book\">Book a Table</button>
+                    <button id=\"book\" onclick=\"location.href='booking_modyfikacje.php'\">Book a Table</button>
                 </div>";
         }
         else{
@@ -67,7 +68,7 @@
                 </center>";
         }
     ?>
-    <div class="container" id="sliderDiv">
+    <div class="container" id="sliderDiv" style="width: 50%; height: auto;">
         <div class="wrapper">
             <img src="images/photo1.jpg">
             <img src="images/photo2.jpg">

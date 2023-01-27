@@ -12,11 +12,10 @@
     #rcorners1 {
         border-radius: 25px;
         background: white;
-        height: 550px;
+        height: 60%;
         width: 500px;
         margin: 0 auto;
         background-size: 10% 10%;
-        text-align: center;
     }
     input[type=submit]{
         background-color: #04AA6D;

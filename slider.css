@@ -15,7 +15,18 @@
         margin-left: 2ch;
         margin-right: 2ch;
         color: white;
-    }
+	}
+	#label1{
+		background-color: transparent;
+		border-color: transparent;
+		font-size: x-large;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		margin-left: 2ch;
+		margin-right: 2ch;
+		color: white;
+		font-family: brush script mt, cursive;
+	}
+    
     #transparent:hover{
         color: white;
         transform: scale(1.25) perspective(1px)
@@ -52,16 +63,15 @@
         padding-top: 25px;
     }
     #sliderDiv{
-        padding: 0;
-        margin: 0;
-        margin-top: 4cm;
-        box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-top: 4cm;
+    box-sizing: border-box;
     }
 
     /*Basic structure of slider*/
     .container{
-        width: 50%;
-        height: 60%;
+        width: 500px;
         position: absolute;
         transform: translate(-50%,-50%);
         top: 50%;
@@ -72,43 +82,10 @@
         box-shadow: -1px 5px 15px black;
     }
 
-    /*Area of images*/
-    .wrapper{
-        width: 100%;
-        display: flex;
-        animation: slide 16s infinite;
-    }
 
-    img{
-        width: 100%;
-        height: 100%;
-    }
-    /*Animation activated by keyframes*/
-    @keyframes slide{
-        0%{
-            transform: translateX(0);
-        }
-        25%{
-            transform: translateX(0);
-        }
-        30%{
-            transform: translateX(-100%);
-        }
-        50%{
-            transform: translateX(-100%);
-        }
-        55%{
-            transform: translateX(-200%);
-        }
-        75%{
-            transform: translateX(-200%);
-        }
-        80%{
-            transform: translateX(-300%);
-        }
-        100%{
-            transform: translateX(-300%);
-        }
+    #sliderDiv{
+        width: 50%;
+        height: auto;
     }
     #bookdiv{
         text-align: center;

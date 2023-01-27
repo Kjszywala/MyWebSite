@@ -15,7 +15,7 @@
         <button id="button" onclick="location.href='mainwindow.php'">Main Menu</button>
         
     </center><br>
-<div id="rcorners1" >
+<div id="rcorners1" style="height: 550px;">
     <center>
         <form method=POST action="">
             <table>
@@ -38,7 +38,7 @@
                     <td colspan="2" style="width: 100%;"><textarea name="message" maxlength="255" id="messagetextbox" required></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="padding-top: 30px;">
+                    <td colspan="2">
                     <input type=submit name="submit" id="test" value='SUBMIT' style='width: 100%;'></td>
                 </tr>
             </table> 
