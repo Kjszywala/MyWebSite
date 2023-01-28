@@ -49,59 +49,59 @@
 </div>
 <?php
 	if(isset($_POST['submit_reservation'])){
-	$serwer = mysqli_connect("localhost", "root", "")
-                or exit("Could not connect to the database server");
-	$baza = mysqli_select_db($serwer, "rezerwacje") 
-			or exit ("Could not connect to the database server");
-    mysqli_set_charset($serwer, "utf8");
-	
-	$date = $_POST['reservation-date'];
-    $time = $_POST['reservation-time'];
-    $party_size = $_POST['reservation-party-size'];
-    $name = $_POST['reservation-name'];
-    $phone = $_POST['reservation-phone'];
-
-	 // sprawdzenie, czy rezerwacja jest już zarezerwowana
-    $query = "SELECT * FROM reservation WHERE date='$date' AND time='$time'";
-	$result = mysqli_query($serwer, $query);
-
-	if(mysqli_num_rows($result) == 4){
-    ?>
-    <script>
-        alert("Reservation for this date, time and party size is already booked. Please choose a different date or time.");
-    </script>
-    <?php
-	}
-    else {
-        // sprawdzenie, czy istnieją wolne stoliki dla danej wielkości grupy
-    $query = "SELECT * FROM tables WHERE party_size >= '$party_size'";
-    $result = mysqli_query($serwer, $query);
-
-        if(mysqli_num_rows($result) > 0){
-            // pobranie ID pierwszego wolnego stolika
-            $row = mysqli_fetch_array($result);
-            $table_id = $row['id'];
-            
-            //wstawienie rezerwacji
-            $query = "INSERT INTO `reservation` (date, time, party_size, name, phone, table_id) VALUES ('$date', '$time', '$party_size', '$name', '$phone', $table_id)";
-            mysqli_query($serwer, $query);
-            
-            // // zmiana statusu stolika na zarezerwowany
-            // $query = "UPDATE tables SET is_reserved = '1' WHERE id = '$table_id'";
-            // mysqli_query($serwer, $query);
-        ?>
+        $serwer = mysqli_connect("localhost", "root", "")
+                    or exit("Could not connect to the database server");
+        $baza = mysqli_select_db($serwer, "rezerwacje") 
+                or exit ("Could not connect to the database server");
+        mysqli_set_charset($serwer, "utf8");
         
-        <script>
-            alert("A table has been reserved. Thank you for using our service");
-        </script>
+        $date = $_POST['reservation-date'];
+        $time = $_POST['reservation-time'];
+        $party_size = $_POST['reservation-party-size'];
+        $name = $_POST['reservation-name'];
+        $phone = $_POST['reservation-phone'];
 
-        <?php
-            }
-            else {
-                ?>
-                <script>
-                    alert("No available tables for the selected party size. Please choose a different party size or later date.");
-                </script>
+        // sprawdzenie, czy rezerwacja jest już zarezerwowana
+        $query = "SELECT * FROM reservation WHERE date='$date' AND time='$time'";
+        $result = mysqli_query($serwer, $query);
+
+        if(mysqli_num_rows($result) == 4){
+            ?>
+            <script>
+                alert("Reservation for this date, time and party size is already booked. Please choose a different date or time.");
+            </script>
+            <?php
+	    }
+        else {
+            // sprawdzenie, czy istnieją wolne stoliki dla danej wielkości grupy
+            $query = "SELECT * FROM tables WHERE party_size >= '$party_size'";
+            $result = mysqli_query($serwer, $query);
+
+            if(mysqli_num_rows($result) > 0){
+                // pobranie ID pierwszego wolnego stolika
+                $row = mysqli_fetch_array($result);
+                $table_id = $row['id'];
+                
+                //wstawienie rezerwacji
+                $query = "INSERT INTO `reservation` (date, time, party_size, name, phone, table_id) VALUES ('$date', '$time', '$party_size', '$name', '$phone', $table_id)";
+                mysqli_query($serwer, $query);
+                
+                // // zmiana statusu stolika na zarezerwowany
+                // $query = "UPDATE tables SET is_reserved = '1' WHERE id = '$table_id'";
+                // mysqli_query($serwer, $query);
+            ?>
+            
+            <script>
+                alert("A table has been reserved. Thank you for using our service");
+            </script>
+
+            <?php
+        }
+        else {
+            ?>
+            <script>
+                alert("No available tables for the selected party size. Please choose a different party size or later date.");
+            </script>
         <?php
             }
     }

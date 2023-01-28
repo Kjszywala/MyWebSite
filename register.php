@@ -14,7 +14,7 @@
         <h1 id="register">Register</h1>
         <button id="button" onclick="location.href='mainwindow.php'">Main Menu</button>
     </center><br>
-<div id="rcorners1" >
+<div id="rcorners1" style="height: 550px;">
     <center>
     <form method=POST action="">
     <table>
