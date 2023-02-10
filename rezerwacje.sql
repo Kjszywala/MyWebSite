@@ -18,10 +18,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `rezerwacje`
+-- Baza danych: `restauracja`
 --
 
 -- --------------------------------------------------------
+CREATE DATABASE restauracja;
+USE restauracja;
 
 --
 -- Struktura tabeli dla tabeli `reservation`

@@ -51,7 +51,7 @@
 	if(isset($_POST['submit_reservation'])){
         $serwer = mysqli_connect("localhost", "root", "")
                     or exit("Could not connect to the database server");
-        $baza = mysqli_select_db($serwer, "rezerwacje") 
+        $baza = mysqli_select_db($serwer, "restauracja") 
                 or exit ("Could not connect to the database server");
         mysqli_set_charset($serwer, "utf8");
         
